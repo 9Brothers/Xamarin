@@ -3,6 +3,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 using Xamarin.Forms;
 
@@ -54,13 +57,21 @@ namespace PortableApp
 
       //MainPage = new ColorBlocksPage();
 
-      MainPage = new BlackCatPage();
+      //MainPage = new BlackCatPage();
+
+      //MainPage = new WhatSizePage();
+
+      MainPage = new MetricalBoxViewPage();
     }
 
 		protected override void OnStart ()
 		{
-			// Handle when your app starts
-		}
+      // Handle when your app starts
+
+      AppCenter.Start("android=a2283e27-5605-4726-8bdc-e21b0135a62b;" + "uwp={Your UWP App secret here};" +
+                   "ios={Your iOS App secret here}",
+                   typeof(Analytics), typeof(Crashes));
+    }
 
 		protected override void OnSleep ()
 		{

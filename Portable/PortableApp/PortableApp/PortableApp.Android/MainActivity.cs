@@ -13,10 +13,6 @@ namespace PortableApp.Droid
   {
     protected override void OnCreate(Bundle bundle)
     {
-      AppCenter.Start("a2283e27-5605-4726-8bdc-e21b0135a62b",
-                   typeof(Analytics), typeof(Crashes));
-      AppCenter.Start("a2283e27-5605-4726-8bdc-e21b0135a62b", typeof(Analytics), typeof(Crashes));
-
       TabLayoutResource = Resource.Layout.Tabbar;
       ToolbarResource = Resource.Layout.Toolbar;
 
