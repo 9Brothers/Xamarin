@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="PortableApp.Pages.PlatformSpecificLabelsPage">
+
+  <!--<OnPlatform x:TypeArguments="View">
+    <OnPlatform.iOS>
+      <Label Text="This is an iOS device"
+             HorizontalOptions="Center"
+             VerticalOptions="Center" />
+    </OnPlatform.iOS>
+
+    <OnPlatform.Android>
+      <Label Text="This is an Android device"
+             HorizontalOptions="Center"
+             VerticalOptions="Center" />
+    </OnPlatform.Android>
+  </OnPlatform>-->
+
+  <Label x:Name="deviceLabel"
+         HorizontalOptions="Center"
+         VerticalOptions="Center">
+    <Label.Text>
+      <OnPlatform x:TypeArguments="x:String"
+                  iOS="This is an iOS device"
+                  Android="This is an Android device" />
+    </Label.Text>
+  </Label>
+</ContentPage>

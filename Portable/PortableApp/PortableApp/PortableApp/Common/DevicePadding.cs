@@ -11,5 +11,16 @@ namespace PortableApp.Common
     {
       return Device.RuntimePlatform == Device.iOS ? value + 20 : value;
     }
+
+    public static double ByOS(double Android = 0, double iOS = 0)
+    {
+      double result = 0;
+
+      if (Device.RuntimePlatform == Device.Android) result = Android;
+
+      else if (Device.RuntimePlatform == Device.iOS) result = iOS;
+
+      return result;
+    }
   }
 }

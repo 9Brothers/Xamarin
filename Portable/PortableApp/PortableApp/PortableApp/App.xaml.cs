@@ -8,15 +8,23 @@ using Microsoft.AppCenter.Analytics;
 using Microsoft.AppCenter.Crashes;
 
 using Xamarin.Forms;
+using PortableApp.Pages.Xaml;
 
 namespace PortableApp
 {
 	public partial class App : Application
 	{
-		public App ()
+    public string DisplayLabelText { get; set; }
+
+    const string displayLabelText = "displayLabelText";
+    
+
+
+
+    public App ()
 		{
 			InitializeComponent();
-
+      
       //MainPage = new PortableApp.MainPage();
 
       //MainPage = new ContentPage
@@ -61,7 +69,50 @@ namespace PortableApp
 
       //MainPage = new WhatSizePage();
 
-      MainPage = new MetricalBoxViewPage();
+      //MainPage = new MetricalBoxViewPage();
+
+      //MainPage = new FontSizesPage();
+
+      //MainPage = new EstimatedFontSizePage();
+
+      //MainPage = new FitToSizeClockPage();
+
+      //MainPage = new AccessibilityTestPage();
+
+      //MainPage = new EmpiricalFontSizePage();
+
+      //MainPage = new ButtonLoggerPage();
+
+      //MainPage = new TwoButtonsPage();
+
+      //MainPage = new ButtonLambdasPage();
+
+      //MainPage = new SimplestKeypadPage();
+
+      if (Properties.ContainsKey(displayLabelText))
+      {
+        DisplayLabelText = Properties[displayLabelText] as string;
+      }
+
+      //MainPage = new PersistentKeypadPage();
+
+      //MainPage = new CodePlusXamlPage();
+
+      //MainPage = new ScaryColorListPage();
+
+      //MainPage = new ParameteredConstructorDemoPage();
+
+      //MainPage = new FactoryMethodDemoPage();
+
+      //MainPage = new XamlClockPage();
+
+      //MainPage = new PlatformSpecificLabelsPage();
+
+      //MainPage = new ColorViewListPage();
+
+      //MainPage = new XamlKeypadPage();
+
+      MainPage = new MonkeyTapPage();
     }
 
 		protected override void OnStart ()
